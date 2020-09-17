@@ -9,7 +9,7 @@ echo "🍎 Mac OS Install Setup Script 🍎"
 echo "by Sean Meling Murray"
 echo "(adapted from https://github.com/nnja/new-computer)"
 
-# Set the colours you can user
+# Set the colours you can use
 red=$(tput setaf 1)
 green=$(tput setaf 2)
 cyan=$(tput setaf 6)
