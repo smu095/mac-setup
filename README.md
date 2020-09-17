@@ -211,9 +211,9 @@ The following steps are performed manually:
 
 ### iTerm2
 
-- iTerm2 → Profiles → General
+- _iTerm2 → Profiles → General_
   - [x] Other Actions → Import JSON profiles
-- iTerm2 → Preferences → General
+- _iTerm2 → Preferences → General_
   - [x] Load preferences from custom folder (initialise empty folder)
   - [x] Save changes to folder when iTerm2 quits
   - [x] Save current settings
@@ -221,14 +221,14 @@ The following steps are performed manually:
 
 ### System Preferences
 
-- System Preferences → Keyboard
+- _System Preferences → Keyboard_
   - Press Fn key to: Show Control Strip
-- System Preferences → Keyboard → Customise Control Strip
+- _System Preferences → Keyboard → Customise Control Strip_
   - Delete Siri from Touch Bar
-- System Preferences → Trackpad
+- _System Preferences → Trackpad_
   - [x] Secondary click
   - [x] Tap to click
-- Change where screenshots are saved: Screenshot → Options → Save to.
+- Change where screenshots are saved: _Screenshot → Options → Save to._
 
 ### Dash
 
@@ -244,7 +244,7 @@ The following steps are performed manually:
 
 ### Visual Studio Code
 
-- Open Code → Preferences → Settings, enter `terminal.integrated.fontFamily` in the search box and set the value to `MesloLGS NF`.
+- _Open Code → Preferences → Settings_, enter `terminal.integrated.fontFamily` in the search box and set the value to `MesloLGS NF`.
 - [Shell command:](https://code.visualstudio.com/docs/setup/mac) Install 'code' command in PATH
 - Install the following extensions:
   - Dracula Official
