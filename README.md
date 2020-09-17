@@ -233,6 +233,10 @@ The following steps are performed manually:
   - [x] Save current settings
 - Change bright black to lighter colour for `zsh-autosuggestions`.
 
+### Powerlevel10k
+
+- Uncomment `load`, `disk_usage`, `ram`, `ip` (keep only download/upload speed) and `battery` in ` typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS`, move to appropriate places.
+
 ### System Preferences
 
 - _System Preferences → Keyboard_
@@ -277,3 +281,10 @@ The following steps are performed manually:
 
 - `plugins=(git alias-finder jsontools)`
 - If you notice your shell is slow when pasting text into it, you might want to uncomment this line in your `.zshrc`: `# DISABLE_MAGIC_FUNCTIONS=true`.
+- Add alias for `todo.txt-cli` in `.zshrc`: `alias t="todo.sh"`
+- For `zsh-history-substring-search` to work, bind UP and DOWN keys (use `cat -v` to find out what they are):
+
+```sh
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+```
