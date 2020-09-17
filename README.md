@@ -211,9 +211,12 @@ The following steps are performed manually:
 
 ### iTerm2
 
+- iTerm2 → Profiles → General
+  - [x] Other Actions → Import JSON profiles
 - iTerm2 → Preferences → General
-  - [x] Load preferences from custom folder
+  - [x] Load preferences from custom folder (initialise empty folder)
   - [x] Save changes to folder when iTerm2 quits
+  - [x] Save current settings
 - Change bright black to lighter colour for `zsh-autosuggestions`.
 
 ### System Preferences
