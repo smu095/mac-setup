@@ -20,7 +20,7 @@ reset=$(tput sgr0)
 
 # Colour-echo
 cecho() {
-  echo "${bold}${2}${1}${reset}"
+  echo "${2}${1}${reset}"
   return
 }
 
