@@ -1,4 +1,4 @@
-#                    _           _        _ _ 
+#                    _           _        _ _
 #  ___  _____  __   (_)_ __  ___| |_ __ _| | |
 # / _ \/ __\ \/ /   | | '_ \/ __| __/ _` | | |
 #| (_) \__ \>  <    | | | | \__ \ || (_| | | |
@@ -141,7 +141,7 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Dock: Automatically hide and show
 defaults write com.apple.dock autohide -bool true
 
-# Dock: Only show open applications  
+# Dock: Only show open applications
 defaults write com.apple.dock static-only -bool true
 
 # Dock: Minimize windows into their application’s icon
@@ -183,7 +183,7 @@ echo "source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/
 ###################
 # Updating .zshrc #
 ###################
- 
+
 echo "\n# Set pyenv-compatible PATH" >> ~/.zshrc
 echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.zshrc
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
