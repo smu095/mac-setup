@@ -99,7 +99,8 @@ brew cask install dropbox
 brew install tldr
 
 ### Python
-brew install python
+# NOTE: Following guide @ https://realpython.com/intro-to-pyenv/
+brew install openssl readline sqlite3 xz zlib
 brew install pyenv
 
 ### R
@@ -164,16 +165,29 @@ cecho "Installing Oh My Zsh..." $green
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 brew install romkatv/powerlevel10k/powerlevel10k
+echo "\n# Activate Powerlevel10k theme" >> ~/.zshrc
 echo "source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zshrc
 
 brew install zsh-syntax-highlighting
+echo "\n# Activate zsh-syntax-highlighting" >> ~/.zshrc
 echo "source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
 
 brew install zsh-history-substring-search
+echo "\n# Activate zsh-history-substring-search" >> ~/.zshrc
 echo "source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh" >> ~/.zshrc
 
 brew install zsh-autosuggestions
+echo "\n# Activate zsh-autosuggestions" >> ~/.zshrc
 echo "source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
+
+###################
+# Updating .zshrc #
+###################
+ 
+echo "\n# Set pyenv-compatible PATH" >> ~/.zshrc
+echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
 
 
 ####################
@@ -188,4 +202,3 @@ cecho "#########################################################################
 echo ""
 echo ""
 cecho "NOTE: Some of these changes require a logout/restart to take effect." $red
-
