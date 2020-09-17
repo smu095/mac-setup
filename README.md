@@ -13,7 +13,7 @@ bash -c "`curl -L https://git.io/mac-setup`"
 This command runs the following script:
 
 ```sh
-#                    _           _        _ _ 
+#                    _           _        _ _
 #  ___  _____  __   (_)_ __  ___| |_ __ _| | |
 # / _ \/ __\ \/ /   | | '_ \/ __| __/ _` | | |
 #| (_) \__ \>  <    | | | | \__ \ || (_| | | |
@@ -156,7 +156,7 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Dock: Automatically hide and show
 defaults write com.apple.dock autohide -bool true
 
-# Dock: Only show open applications  
+# Dock: Only show open applications
 defaults write com.apple.dock static-only -bool true
 
 # Dock: Minimize windows into their application’s icon
@@ -198,7 +198,7 @@ echo "source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/
 ###################
 # Updating .zshrc #
 ###################
- 
+
 echo "\n# Set pyenv-compatible PATH" >> ~/.zshrc
 echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.zshrc
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
@@ -255,10 +255,12 @@ The following steps are performed manually:
 - Download cheat sheets for:
   - git
 
-
 ### Visual Studio Code
 
-- _Open Code → Preferences → Settings_, enter `terminal.integrated.fontFamily` in the search box and set the value to `MesloLGS NF`.
+- _Open Code → Preferences → Settings_:
+  - `terminal.integrated.fontFamily`, set the value to `MesloLGS NF`
+  - [x] `files.trimTrailingWhitespace`
+  - [x] `editor.formatOnSave`
 - [Shell command:](https://code.visualstudio.com/docs/setup/mac) Install 'code' command in PATH
 - Install the following extensions:
   - Dracula Official
