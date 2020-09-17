@@ -97,6 +97,7 @@ brew cask install google-chrome
 brew cask install firefox
 brew cask install dropbox
 brew install tldr
+brew install todo-txt
 
 ### Python
 # NOTE: Following guide @ https://realpython.com/intro-to-pyenv/
