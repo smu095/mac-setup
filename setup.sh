@@ -1,3 +1,4 @@
+#!/bin/sh
 #                    _           _        _ _
 #  ___  _____  __   (_)_ __  ___| |_ __ _| | |
 # / _ \/ __\ \/ /   | | '_ \/ __| __/ _` | | |
@@ -98,6 +99,7 @@ brew cask install firefox
 brew cask install dropbox
 brew install tldr
 brew install todo-txt
+brew install fzf
 
 ### Python
 # NOTE: Following guide @ https://realpython.com/intro-to-pyenv/
@@ -148,6 +150,9 @@ defaults write com.apple.dock static-only -bool true
 # Dock: Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
 
+# Dock: Remove autohide-delay
+defaults write com.apple.dock autohide-delay -float 0
+
 # Global: Show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
@@ -181,14 +186,19 @@ brew install zsh-autosuggestions
 echo "\n# Activate zsh-autosuggestions" >> ~/.zshrc
 echo "source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
 
+
 ###################
 # Updating .zshrc #
 ###################
 
+# Pyenv
 echo "\n# Set pyenv-compatible PATH" >> ~/.zshrc
 echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.zshrc
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+
+# Installing fuzzy completion alias and key bindings for fzf
+$(brew --prefix)/opt/fzf/install
 
 
 ####################
