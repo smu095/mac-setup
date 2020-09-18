@@ -203,7 +203,6 @@ brew install zsh-history-substring-search
 brew install zsh-autosuggestions
 
 
-
 ###################
 # Updating .zshrc #
 ###################
