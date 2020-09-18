@@ -10,13 +10,19 @@ This repository contains personal dotfiles and scripts for setting up a new Mac,
 
 ## Install from script
 
-Open your terminal and run the following command:
+Note that [Homebrew](https://brew.sh/) requires [XCode](https://developer.apple.com/xcode/). To download the CLT tools for XCode, run the following command:
+
+```sh
+xcode-select --install
+```
+
+To setup your new Mac, run the following command:
 
 ```sh
 bash -c "`curl -L https://git.io/mac-setup`"
 ```
 
-This command runs the following script:
+This will run the following script:
 
 ```sh
 #!/bin/sh
@@ -109,18 +115,18 @@ brew cask install dash
 brew cask install docker
 
 ### Command line tools - install new ones, update others to latest version
+brew install fzf
 brew install git
-brew install wget
+brew install tldr
+brew install todo-txt
 brew install tree
+brew install wget
 brew install zsh
 
 ### Productivity
-brew cask install google-chrome
-brew cask install firefox
 brew cask install dropbox
-brew install tldr
-brew install todo-txt
-brew install fzf
+brew cask install firefox
+brew cask install google-chrome
 
 ### Python
 # NOTE: Following guide @ https://realpython.com/intro-to-pyenv/
@@ -192,31 +198,35 @@ cecho "Installing Oh My Zsh..." $green
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 brew install romkatv/powerlevel10k/powerlevel10k
-echo "\n# Activate Powerlevel10k theme" >> ~/.zshrc
-echo "source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zshrc
-
 brew install zsh-syntax-highlighting
-echo "\n# Activate zsh-syntax-highlighting" >> ~/.zshrc
-echo "source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
-
 brew install zsh-history-substring-search
-echo "\n# Activate zsh-history-substring-search" >> ~/.zshrc
-echo "source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh" >> ~/.zshrc
-
 brew install zsh-autosuggestions
-echo "\n# Activate zsh-autosuggestions" >> ~/.zshrc
-echo "source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
+
 
 
 ###################
 # Updating .zshrc #
 ###################
 
-# Pyenv
-echo "\n# Set pyenv-compatible PATH" >> ~/.zshrc
-echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.zshrc
-echo 'eval "$(pyenv init -)"' >> ~/.zshrc
-echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+cat <<'EOT' >> ~/.zshrc
+
+# Activate Powerlevel10k theme
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# Activate zsh-syntax-highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Activate zsh-history-substring-search
+source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# Activate zsh-autosuggestions
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Set pyenv-compatible PATH
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+EOT
 
 # Installing fuzzy completion alias and key bindings for fzf
 $(brew --prefix)/opt/fzf/install
@@ -299,15 +309,56 @@ The following steps are performed manually:
 - `plugins=(git alias-finder jsontools)`
 - If you notice your shell is slow when pasting text into it, you might want to uncomment this line in your `.zshrc`: `# DISABLE_MAGIC_FUNCTIONS=true`.
 - Add alias for `todo.txt-cli` in `.zshrc`: `alias t="todo.sh"`
+
+#### `zsh-history-substring-search`
+
 - _Key bindings:_
-  - `zsh-history-substring-search`: Bind UP and DOWN keys (use `cat -v` to find out what they are).
-  - `fzf` may require that that Alt + C be adjusted.
 
 ```sh
 # Add to .zshrc
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-bindkey "ç" fzf-cd-widget
 ```
 
+#### `fzf`
+
+- See [Boost Your Command-Line Productivity With Fuzzy Finder](https://medium.com/better-programming/boost-your-command-line-productivity-with-fuzzy-finder-985aa162ba5d#e770) for an excellent guide to `fzf`.
+- Fix problem with Alt + C by adding `bindkey "ç" fzf-cd-widget` to `.zshrc`.
 - `fzf` binds `**` to fuzzy autocompletion, which conflicts with [globbing](http://zsh.sourceforge.net/Intro/intro_2.html). To change this, set `export FZF_COMPLETION_TRIGGER='**'` in `.zshrc` and change `**` to whatever you like.
+- **Optional:** Useful key bindings for `fzf`:
+
+```sh
+# Toggle preview window visibility with '?'
+fzf --bind '?:toggle-preview'
+# Select all entries with 'CTRL-A'
+fzf --bind 'ctrl-a:select-all'
+# Copy the selected entries to the clipboard with 'CTRL-Y'
+--bind 'ctrl-y:execute-silent(echo {+} | pbcopy)'
+# Open the selected entries in vim with 'CTRL-E'
+--bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
+#Open the selected entries in vscode with 'CTRL-V'
+--bind 'ctrl-v:execute(code {+})'
+```
+
+- **Optional:** Options can be added to `$FZF_DEFAULT_OPTS` so that they are always applied, not only to `fzf` but also when using key bindings and fuzzy completion.
+
+```sh
+# Add to .zshrc
+export FZF_DEFAULT_OPTS="
+--layout=reverse
+--info=inline
+--height=80%
+--multi
+--preview-window=:hidden
+--preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+--color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
+--prompt='∼ ' --pointer='▶' --marker='✓'
+--bind '?:toggle-preview'
+--bind 'ctrl-a:select-all'
+--bind 'ctrl-y:execute-silent(echo {+} | pbcopy)'
+--bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
+--bind 'ctrl-v:execute(code {+})'
+"
+```
+
+- Note that the options above require `bat`, which can be install via `brew install bat`. **WARNING:** `bat` installation takes a _long_ time.

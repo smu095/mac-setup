@@ -88,18 +88,18 @@ brew cask install dash
 brew cask install docker
 
 ### Command line tools - install new ones, update others to latest version
+brew install fzf
 brew install git
-brew install wget
+brew install tldr
+brew install todo-txt
 brew install tree
+brew install wget
 brew install zsh
 
 ### Productivity
-brew cask install google-chrome
-brew cask install firefox
 brew cask install dropbox
-brew install tldr
-brew install todo-txt
-brew install fzf
+brew cask install firefox
+brew cask install google-chrome
 
 ### Python
 # NOTE: Following guide @ https://realpython.com/intro-to-pyenv/
@@ -171,31 +171,35 @@ cecho "Installing Oh My Zsh..." $green
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 brew install romkatv/powerlevel10k/powerlevel10k
-echo "\n# Activate Powerlevel10k theme" >> ~/.zshrc
-echo "source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zshrc
-
 brew install zsh-syntax-highlighting
-echo "\n# Activate zsh-syntax-highlighting" >> ~/.zshrc
-echo "source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
-
 brew install zsh-history-substring-search
-echo "\n# Activate zsh-history-substring-search" >> ~/.zshrc
-echo "source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh" >> ~/.zshrc
-
 brew install zsh-autosuggestions
-echo "\n# Activate zsh-autosuggestions" >> ~/.zshrc
-echo "source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
+
 
 
 ###################
 # Updating .zshrc #
 ###################
 
-# Pyenv
-echo "\n# Set pyenv-compatible PATH" >> ~/.zshrc
-echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.zshrc
-echo 'eval "$(pyenv init -)"' >> ~/.zshrc
-echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+cat <<'EOT' >> ~/.zshrc
+
+# Activate Powerlevel10k theme
+source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# Activate zsh-syntax-highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Activate zsh-history-substring-search
+source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# Activate zsh-autosuggestions
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Set pyenv-compatible PATH
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+EOT
 
 # Installing fuzzy completion alias and key bindings for fzf
 $(brew --prefix)/opt/fzf/install
