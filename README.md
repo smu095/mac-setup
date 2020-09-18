@@ -358,3 +358,5 @@ export FZF_DEFAULT_OPTS="
 ```
 
 - Note that the options above require `bat`, which can be install via `brew install bat`. **WARNING:** `bat` installation takes a _long_ time.
+
+- **Optional:** Simplify piping to `fzf` by adding `alias -g Z='| fzf' # change Z to whatever you like` to `.zshrc`.
