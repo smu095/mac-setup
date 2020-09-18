@@ -19,7 +19,7 @@ xcode-select --install
 To setup your new Mac, run the following command:
 
 ```sh
-bash -c "`curl -L https://git.io/mac-setup`"
+sh -c "`curl -L https://git.io/JU06o`"
 ```
 
 This will run the following script:
