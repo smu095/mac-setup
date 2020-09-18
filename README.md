@@ -333,8 +333,6 @@ fzf --bind '?:toggle-preview'
 fzf --bind 'ctrl-a:select-all'
 # Copy the selected entries to the clipboard with 'CTRL-Y'
 --bind 'ctrl-y:execute-silent(echo {+} | pbcopy)'
-# Open the selected entries in vim with 'CTRL-E'
---bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
 #Open the selected entries in vscode with 'CTRL-V'
 --bind 'ctrl-v:execute(code {+})'
 ```
@@ -355,7 +353,6 @@ export FZF_DEFAULT_OPTS="
 --bind '?:toggle-preview'
 --bind 'ctrl-a:select-all'
 --bind 'ctrl-y:execute-silent(echo {+} | pbcopy)'
---bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
 --bind 'ctrl-v:execute(code {+})'
 "
 ```
