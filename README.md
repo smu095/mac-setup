@@ -2,6 +2,12 @@
 
 This repository contains personal dotfiles and scripts for setting up a new Mac, inspired by [Nina Zakharenko](https://github.com/nnja/new-computer).
 
+## Useful resources:
+
+- [How to Set Up Your MacBook for Web Development in 2020](https://medium.com/better-programming/setting-up-your-mac-for-web-development-in-2020-659f5588b883#d118)
+- [Boost Your Command-Line Productivity With Fuzzy Finder](https://medium.com/better-programming/boost-your-command-line-productivity-with-fuzzy-finder-985aa162ba5d)
+- [Homebrew](https://brew.sh/)
+
 ## Install from script
 
 Open your terminal and run the following command:
@@ -13,6 +19,7 @@ bash -c "`curl -L https://git.io/mac-setup`"
 This command runs the following script:
 
 ```sh
+#!/bin/sh
 #                    _           _        _ _
 #  ___  _____  __   (_)_ __  ___| |_ __ _| | |
 # / _ \/ __\ \/ /   | | '_ \/ __| __/ _` | | |
@@ -24,7 +31,7 @@ echo "🍎 Mac OS Install Setup Script 🍎"
 echo "by Sean Meling Murray"
 echo "(adapted from https://github.com/nnja/new-computer)"
 
-# Set the colours you can user
+# Set the colours you can use
 red=$(tput setaf 1)
 green=$(tput setaf 2)
 cyan=$(tput setaf 6)
@@ -112,6 +119,8 @@ brew cask install google-chrome
 brew cask install firefox
 brew cask install dropbox
 brew install tldr
+brew install todo-txt
+brew install fzf
 
 ### Python
 # NOTE: Following guide @ https://realpython.com/intro-to-pyenv/
@@ -162,6 +171,9 @@ defaults write com.apple.dock static-only -bool true
 # Dock: Minimize windows into their application’s icon
 defaults write com.apple.dock minimize-to-application -bool true
 
+# Dock: Remove autohide-delay
+defaults write com.apple.dock autohide-delay -float 0
+
 # Global: Show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
@@ -195,14 +207,19 @@ brew install zsh-autosuggestions
 echo "\n# Activate zsh-autosuggestions" >> ~/.zshrc
 echo "source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
 
+
 ###################
 # Updating .zshrc #
 ###################
 
+# Pyenv
 echo "\n# Set pyenv-compatible PATH" >> ~/.zshrc
 echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.zshrc
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+
+# Installing fuzzy completion alias and key bindings for fzf
+$(brew --prefix)/opt/fzf/install
 
 
 ####################
@@ -282,9 +299,15 @@ The following steps are performed manually:
 - `plugins=(git alias-finder jsontools)`
 - If you notice your shell is slow when pasting text into it, you might want to uncomment this line in your `.zshrc`: `# DISABLE_MAGIC_FUNCTIONS=true`.
 - Add alias for `todo.txt-cli` in `.zshrc`: `alias t="todo.sh"`
-- For `zsh-history-substring-search` to work, bind UP and DOWN keys (use `cat -v` to find out what they are):
+- _Key bindings:_
+  - `zsh-history-substring-search`: Bind UP and DOWN keys (use `cat -v` to find out what they are).
+  - `fzf` may require that that Alt + C be adjusted.
 
 ```sh
+# Add to .zshrc
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey "ç" fzf-cd-widget
 ```
+
+- `fzf` binds `**` to fuzzy autocompletion, which conflicts with [globbing](http://zsh.sourceforge.net/Intro/intro_2.html). To change this, set `export FZF_COMPLETION_TRIGGER='**'` in `.zshrc` and change `**` to whatever you like.
