@@ -110,13 +110,13 @@ cecho "Installing brew apps..." $green
 brew cask install rectangle
 
 ### Developer Tools
-brew cask install iterm2
-brew cask install dash
-brew cask install docker
 brew install python
 brew install r
-brew cask install rstudio
 brew install node
+brew cask install dash
+brew cask install docker
+brew cask install iterm2
+brew cask install rstudio
 brew cask install visual-studio-code
 
 ### Command line tools - install new ones, update others to latest version
@@ -216,11 +216,24 @@ brew install zsh-history-substring-search
 brew install zsh-autosuggestions
 
 
+####################################################
+# Clone setup repo and create symlinks to dotfiles #
+####################################################
+
+mkdir -pv ~/Documents/github && cd "$_" && git clone https://github.com/smu095/the-unix-workbench.git
+ln -sv "$PWD/mac-setup/.todo.cfg" ~
+ln -sv "$PWD/mac-setup/.aliases" ~
+ln -sv "$PWD/mac-setup/.gitconfig" ~
+
+
 ###################
 # Updating .zshrc #
 ###################
 
 cat <<'EOT' >> ~/.zshrc
+
+# Sourcing aliases
+source ~/.aliases
 
 # Activate Powerlevel10k theme
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
