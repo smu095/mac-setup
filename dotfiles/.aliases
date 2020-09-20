@@ -12,6 +12,9 @@ alias -g Z="| fzf"
 # Simplify grep piping
 alias -g G="| grep"
 
+# Shortening alias-finder
+alias af = "alias-finder"
+
 # Easier navigation
 alias ..="cd .."
 alias ...="cd ../.."
