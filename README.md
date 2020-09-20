@@ -1,6 +1,6 @@
 # Setting up a new Mac
 
-This repository contains personal dotfiles and scripts for setting up a new Mac, inspired by [Nina Zakharenko](https://github.com/nnja/new-computer).
+This repository contains personal dotfiles and scripts for setting up a new Mac, inspired by [Nina Zakharenko](https://github.com/nnja/new-computer). Aliases and macOS configuration heavily inspired by [Mathias's dotfiles](https://github.com/mathiasbynens/dotfiles).
 
 ## Useful resources:
 
@@ -274,7 +274,8 @@ The following steps are performed manually:
 ### System Preferences
 
 - _System Preferences → Keyboard_
-  - Press Fn key to: Show Control Strip
+  - Adjust Key Repeat and Delay Until Repeat to desired sensitivity.
+  - Press Fn key to: Show Control Strips
 - _System Preferences → Keyboard → Customise Control Strip_
   - Delete Siri from Touch Bar
 - _System Preferences → Trackpad_
