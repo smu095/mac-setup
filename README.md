@@ -113,11 +113,15 @@ brew cask install rectangle
 brew cask install iterm2
 brew cask install dash
 brew cask install docker
+brew install python
+brew install r
+brew cask install rstudio
+brew install node
+brew cask install visual-studio-code
 
 ### Command line tools - install new ones, update others to latest version
 brew install fzf
 brew install git
-brew install tldr
 brew install todo-txt
 brew install tree
 brew install wget
@@ -127,21 +131,6 @@ brew install zsh
 brew cask install dropbox
 brew cask install firefox
 brew cask install google-chrome
-
-### Python
-# NOTE: Following guide @ https://realpython.com/intro-to-pyenv/
-brew install openssl readline sqlite3 xz zlib
-brew install pyenv
-
-### R
-brew install r
-brew cask install rstudio
-
-### Node.js and npm
-brew install node
-
-### Dev Editors
-brew cask install visual-studio-code
 
 ### Music
 brew cask install spotify
@@ -159,14 +148,28 @@ cecho "Setting sensible Apple defaults..." $green
 # For VS Code: Enable key-repeating
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
-# Finder: Show all hidden files
-defaults write com.apple.finder AppleShowAllFiles true
+# Finder: Show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
 
 # Finder: Keep folders on top when sorting by name
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
 # Finder: Use list view by default
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+# Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
+defaults write com.apple.finder QuitMenuItem -bool true
+
+# Finder: Set Desktop as the default location for new Finder windows
+# For other paths, use `PfLo` and `file:///full/path/here/`
+defaults write com.apple.finder NewWindowTarget -string "PfDe"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
+
+# Finder: Display full POSIX path as window title
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# Set the icon size of Dock items to 36 pixels
+defaults write com.apple.dock tilesize -int 36
 
 # Dock: Automatically hide and show
 defaults write com.apple.dock autohide -bool true
@@ -189,13 +192,23 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Global: Use function F1, F2, etc. keys as standard function keys
 defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
 
+# Global: Disable Notification Center and remove the menu bar icon
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+
+# Screensaver: Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# iTerm2: Don’t display the annoying prompt when quitting
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
 
 ########################
 # Installing Oh My Szh #
 ########################
 
 cecho "Installing Oh My Zsh..." $green
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 brew install romkatv/powerlevel10k/powerlevel10k
 brew install zsh-syntax-highlighting
@@ -220,15 +233,7 @@ source /usr/local/share/zsh-history-substring-search/zsh-history-substring-searc
 
 # Activate zsh-autosuggestions
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# Set pyenv-compatible PATH
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 EOT
-
-# Installing fuzzy completion alias and key bindings for fzf
-$(brew --prefix)/opt/fzf/install
 
 
 ####################
@@ -237,12 +242,15 @@ $(brew --prefix)/opt/fzf/install
 
 echo ""
 cecho "Done!" $cyan
-echo ""
-echo ""
-cecho "################################################################################" $white
-echo ""
-echo ""
 cecho "NOTE: Some of these changes require a logout/restart to take effect." $red
+cecho "Do you want to restart your computer now? (y/n)" $red
+
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
+then
+  sudo shutdown -r now
+else
+  echo "Okay! Remember to reset your computer later!"
+fi
 ```
 
 ## Manual setup
