@@ -274,15 +274,15 @@ The following steps are performed manually:
 
 - _iTerm2 → Profiles → General_
   - [x] Other Actions → Import JSON profiles
-- _iTerm2 → Preferences → General_
+- Change bright black to lighter colour for visibility when using `zsh-autosuggestions`.
+- **Optional:** _iTerm2 → Preferences → General_
   - [x] Load preferences from custom folder (initialise empty folder)
   - [x] Save changes to folder when iTerm2 quits
   - [x] Save current settings
-- Change bright black to lighter colour for `zsh-autosuggestions`.
 
 ### Powerlevel10k
 
-- Uncomment `load`, `disk_usage`, `ram`, `ip` (keep only download/upload speed) and `battery` in ` typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS`, move to appropriate places.
+- Uncomment `battery` in ` typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS`, move to appropriate place.
 
 ### System Preferences
 
@@ -329,7 +329,6 @@ The following steps are performed manually:
 
 - `plugins=(git alias-finder jsontools)`
 - If you notice your shell is slow when pasting text into it, you might want to uncomment this line in your `.zshrc`: `# DISABLE_MAGIC_FUNCTIONS=true`.
-- Add alias for `todo.txt-cli` in `.zshrc`: `alias t="todo.sh"`
 
 #### `zsh-history-substring-search`
 
@@ -346,18 +345,6 @@ bindkey '^[[B' history-substring-search-down
 - See [Boost Your Command-Line Productivity With Fuzzy Finder](https://medium.com/better-programming/boost-your-command-line-productivity-with-fuzzy-finder-985aa162ba5d#e770) for an excellent guide to `fzf`.
 - Fix problem with Alt + C by adding `bindkey "ç" fzf-cd-widget` to `.zshrc`.
 - `fzf` binds `**` to fuzzy autocompletion, which conflicts with [globbing](http://zsh.sourceforge.net/Intro/intro_2.html). To change this, set `export FZF_COMPLETION_TRIGGER='**'` in `.zshrc` and change `**` to whatever you like.
-- **Optional:** Useful key bindings for `fzf`:
-
-```sh
-# Toggle preview window visibility with '?'
-fzf --bind '?:toggle-preview'
-# Select all entries with 'CTRL-A'
-fzf --bind 'ctrl-a:select-all'
-# Copy the selected entries to the clipboard with 'CTRL-Y'
---bind 'ctrl-y:execute-silent(echo {+} | pbcopy)'
-#Open the selected entries in vscode with 'CTRL-V'
---bind 'ctrl-v:execute(code {+})'
-```
 
 - **Optional:** Options can be added to `$FZF_DEFAULT_OPTS` so that they are always applied, not only to `fzf` but also when using key bindings and fuzzy completion.
 
@@ -380,5 +367,3 @@ export FZF_DEFAULT_OPTS="
 ```
 
 - Note that the options above require `bat`, which can be install via `brew install bat`. **WARNING:** `bat` installation takes a _long_ time.
-
-- **Optional:** Simplify piping to `fzf` by adding `alias -g Z='| fzf' # change Z to whatever you like` to `.zshrc`.
