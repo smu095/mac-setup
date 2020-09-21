@@ -33,6 +33,9 @@ alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias update="sudo softwareupdate -i -a"
 alias brewup="brew update; brew upgrade; brew cleanup; brew doctor"
 
+# Restart computer
+alias restart="sudo shutdown -r now"
+
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
