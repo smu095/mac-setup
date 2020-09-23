@@ -1,0 +1,58 @@
+#!/bin/zsh
+
+# For VS Code: Enable key-repeating
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
+# Finder: Show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Finder: Keep folders on top when sorting by name
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
+# Finder: Use list view by default
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+# Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
+defaults write com.apple.finder QuitMenuItem -bool true
+
+# Finder: Set Desktop as the default location for new Finder windows
+# For other paths, use `PfLo` and `file:///full/path/here/`
+defaults write com.apple.finder NewWindowTarget -string "PfDe"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
+
+# Finder: Display full POSIX path as window title
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# Set the icon size of Dock items to 36 pixels
+defaults write com.apple.dock tilesize -int 36
+
+# Dock: Automatically hide and show
+defaults write com.apple.dock autohide -bool true
+
+# Dock: Only show open applications
+defaults write com.apple.dock static-only -bool true
+
+# Dock: Minimize windows into their application’s icon
+defaults write com.apple.dock minimize-to-application -bool true
+
+# Dock: Remove autohide-delay
+defaults write com.apple.dock autohide-delay -float 0
+
+# Global: Show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Global: Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+# Global: Use function F1, F2, etc. keys as standard function keys
+defaults write NSGlobalDomain com.apple.keyboard.fnState -bool true
+
+# Global: Disable Notification Center and remove the menu bar icon
+launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
+
+# Screensaver: Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# iTerm2: Don’t display the annoying prompt when quitting
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
