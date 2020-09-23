@@ -327,16 +327,14 @@ The following steps are performed manually:
 
 ### Svelte
 
-- To ensure that Svelte is used for `.svelte` files, make sure to add the following to your settings JSON:
+- To ensure that the Svelte plugin is used for autoformatting `.svelte` files, add the following to your settings JSON:
 
 ```json
 {
-  ...
-    "editor.formatOnSave": true,
+  "editor.formatOnSave": true,
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
-  },
-  ...
+  }
 }
 ```
 
