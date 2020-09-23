@@ -325,6 +325,21 @@ The following steps are performed manually:
   - Prettier
   - Svelte for VS Code
 
+### Svelte
+
+- To ensure that Svelte is used for `.svelte` files, make sure to add the following to your settings JSON:
+
+```json
+{
+  ...
+    "editor.formatOnSave": true,
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  ...
+}
+```
+
 ### Oh My Zsh
 
 - `plugins=(git alias-finder jsontools)`
