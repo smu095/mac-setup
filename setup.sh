@@ -193,10 +193,11 @@ brew install zsh-autosuggestions
 # Clone setup repo and create symlinks to dotfiles #
 ####################################################
 
-mkdir -pv ~/Documents/github && cd "$_" && git clone https://github.com/smu095/mac-setup.git
-ln -sv "$PWD/mac-setup/.todo.cfg" ~
-ln -sv "$PWD/mac-setup/.aliases" ~
-ln -sv "$PWD/mac-setup/.gitconfig" ~
+mkdir -pv ~/Development/github && cd "$_" && git clone https://github.com/smu095/mac-setup.git
+mkdir -pv ~/dotfiles && cd "$_" && cp -r ~/Development/github/mac-setup/dotfiles ~
+ln -sv "$PWD/.todo.cfg" ~
+ln -sv "$PWD/.aliases" ~
+ln -sv "$PWD/.gitconfig" ~
 
 
 ###################
