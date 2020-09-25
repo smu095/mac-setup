@@ -36,12 +36,6 @@ alias spotify="/Applications/Spotify.app/Contents/MacOS/Spotify"
 alias update="sudo softwareupdate -i -a"
 alias brewup="brew update; brew upgrade; brew cleanup; brew doctor"
 
-# Restart computer
-restart(){
-    echo "Enter password to restart your computer..."
-    sudo shutdown -r now
-}
-
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
@@ -55,3 +49,26 @@ alias afk="pmset displaysleepnow"
 
 # Reload shell
 alias reload="exec ${SHELL} -l"
+
+#############
+# Functions #
+#############
+
+# Restart computer
+restart(){
+    echo "Enter password to restart your computer..."
+    sudo shutdown -r now
+}
+
+# Copy dotfiles to current folder
+dot() {
+    echo "Add dotfile: "
+    read response
+
+    if [[ ! -e ~/Documents/Github/mac-setup/dotfiles/${response} ]]
+    then
+        echo "File ${response} not found."
+    else
+        cp -vi ~/Documents/Github/mac-setup/dotfiles/${response} ${PWD}
+    fi
+}
