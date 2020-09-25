@@ -220,10 +220,11 @@ brew install zsh-autosuggestions
 # Clone setup repo and create symlinks to dotfiles #
 ####################################################
 
-mkdir -pv ~/Documents/github && cd "$_" && git clone https://github.com/smu095/mac-setup.git
-ln -sv "$PWD/mac-setup/.todo.cfg" ~
-ln -sv "$PWD/mac-setup/.aliases" ~
-ln -sv "$PWD/mac-setup/.gitconfig" ~
+mkdir -pv ~/Development/github && cd "$_" && git clone https://github.com/smu095/mac-setup.git
+mkdir -pv ~/dotfiles && cd "$_" && cp -r ~/Development/github/mac-setup/dotfiles ~
+ln -sv "$PWD/.todo.cfg" ~
+ln -sv "$PWD/.aliases" ~
+ln -sv "$PWD/.gitconfig" ~
 
 
 ###################
@@ -316,14 +317,17 @@ The following steps are performed manually:
 - [Shell command:](https://code.visualstudio.com/docs/setup/mac) Install 'code' command in PATH
 - Install the following extensions:
   - Dracula Official
+  - ESLint
   - GitLens
-  - Todo Tree
-  - Rainbow Brackets
+  - Prettier
   - Python
   - Python Docstring Generator
-  - ESLint
-  - Prettier
+  - Rainbow Brackets
+  - Svelte 3 Snippets
   - Svelte for VS Code
+  - Svelte Intellisense
+  - Todo Tree
+  - vscode-icons
 
 ### Svelte
 
