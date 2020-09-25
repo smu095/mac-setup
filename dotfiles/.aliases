@@ -62,13 +62,10 @@ restart(){
 
 # Copy dotfiles to current folder
 dot() {
-    echo "Add dotfile: "
-    read response
-
-    if [[ ! -e ~/Documents/Github/mac-setup/dotfiles/${response} ]]
+    if [[ ! -e ~/dotfiles/${1} ]]
     then
-        echo "File ${response} not found."
+        echo "File ~/dotfiles/${1} not found."
     else
-        cp -vi ~/Documents/Github/mac-setup/dotfiles/${response} ${PWD}
+        cp -vi ~/dotfiles/${1} ${PWD}
     fi
 }
