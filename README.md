@@ -10,7 +10,9 @@ This repository contains personal dotfiles and scripts for setting up a new Mac,
 
 ## Install from script
 
-Note that [Homebrew](https://brew.sh/) requires [XCode](https://developer.apple.com/xcode/). To download the CLT tools for XCode, run the following command:
+Note that [Homebrew](https://brew.sh/) requires [XCode](https://developer.apple.com/xcode/). Depending on your operating system, you may or may not have XCode installed.
+
+To download the CLT tools for XCode, run the following command:
 
 ```sh
 xcode-select --install
@@ -283,6 +285,7 @@ The following steps are performed manually:
 
 ### Powerlevel10k
 
+- [Powerlevel10K](https://github.com/romkatv/powerlevel10k) should automatically prompt you to download the Meslo Nerd font. If it doesn't, [download them](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k) and install manually. After installation, set your font to **MesloLGS NF** in iTerm.
 - Uncomment `battery` in ` typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS`, move to appropriate place.
 
 ### System Preferences

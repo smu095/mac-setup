@@ -104,6 +104,7 @@ brew install zsh
 brew cask install dropbox
 brew cask install firefox
 brew cask install google-chrome
+brew cask install slack
 
 ### Music
 brew cask install spotify
