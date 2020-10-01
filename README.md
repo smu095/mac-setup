@@ -133,6 +133,7 @@ brew install zsh
 brew cask install dropbox
 brew cask install firefox
 brew cask install google-chrome
+brew cask install slack
 
 ### Music
 brew cask install spotify
@@ -223,10 +224,9 @@ brew install zsh-autosuggestions
 ####################################################
 
 mkdir -pv ~/Development/github && cd "$_" && git clone https://github.com/smu095/mac-setup.git
-mkdir -pv ~/dotfiles && cd "$_" && cp -r ~/Development/github/mac-setup/dotfiles ~
-ln -sv "$PWD/.todo.cfg" ~
-ln -sv "$PWD/.aliases" ~
-ln -sv "$PWD/.gitconfig" ~
+ln -sv "$PWD/mac-setup/dotfiles/.todo.cfg" ~
+ln -sv "$PWD/mac-setup/dotfiles/.aliases" ~
+ln -sv "$PWD/mac-setup/dotfiles/.gitconfig" ~
 
 
 ###################
