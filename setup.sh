@@ -199,6 +199,9 @@ ln -sv "$PWD/mac-setup/dotfiles/.todo.cfg" ~
 ln -sv "$PWD/mac-setup/dotfiles/.aliases" ~
 ln -sv "$PWD/mac-setup/dotfiles/.gitconfig" ~
 
+# This symlink is required to make dot function work (see .aliases)
+ln -sv "$PWD/mac-setup/dotfiles" ~
+
 
 ###################
 # Updating .zshrc #
