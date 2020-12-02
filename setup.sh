@@ -80,17 +80,17 @@ brew update
 cecho "Installing brew apps..." $green
 
 ### Window Management
-brew cask install rectangle
+brew install --cask rectangle
 
 ### Developer Tools
 brew install python
 brew install r
 brew install node
-brew cask install dash
-brew cask install docker
-brew cask install iterm2
-brew cask install rstudio
-brew cask install visual-studio-code
+brew install --cask dash
+brew install --cask docker
+brew install --cask iterm2
+brew install --cask rstudio
+brew install --cask visual-studio-code
 
 ### Command line tools - install new ones, update others to latest version
 brew install fzf
@@ -101,13 +101,19 @@ brew install wget
 brew install zsh
 
 ### Productivity
-brew cask install dropbox
-brew cask install firefox
-brew cask install google-chrome
-brew cask install slack
+brew install --cask alfred
+brew install --cask alt-tab
+brew install --cask dozer
+brew install --cask dropbox
+brew install --cask firefox
+brew install --cask google-chrome
+brew install --cask slack
+
+# Screensavers
+brew install --cask aerial
 
 ### Music
-brew cask install spotify
+brew install --cask spotify
 
 ### Run Brew Cleanup
 brew cleanup

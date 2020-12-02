@@ -293,8 +293,9 @@ The following steps are performed manually:
 - _System Preferences → Keyboard_
   - Adjust Key Repeat and Delay Until Repeat to desired sensitivity.
   - Press Fn key to: Show Control Strips
+  - Remap ⌘ + Space to Alfred, change Spotlight to ⌥ + Space.
 - _System Preferences → Keyboard → Customise Control Strip_
-  - Delete Siri from Touch Bar
+  - Remove Siri from Touch Bar
 - _System Preferences → Trackpad_
   - [x] Secondary click
   - [x] Tap to click
@@ -334,14 +335,25 @@ The following steps are performed manually:
 
 ### Svelte
 
-- To ensure that the Svelte plugin is used for autoformatting `.svelte` files, add the following to your settings JSON:
+- To ensure that the Svelte plugin is used for autoformatting `.svelte` files, update your settings JSON. I use this:
 
 ```json
 {
   "editor.formatOnSave": true,
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
-  }
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Dracula",
+  "todo-tree.tree.showScanModeButton": false,
+  "workbench.iconTheme": "vscode-icons",
+  "files.trimTrailingWhitespace": true,
+  "terminal.integrated.fontFamily": "MesloLGS NF"
 }
 ```
 
