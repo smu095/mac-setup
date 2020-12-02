@@ -310,6 +310,10 @@ The following steps are performed manually:
   - [x] Tap to click
 - Change where screenshots are saved: _Screenshot → Options → Save to._
 
+### Flycut
+
+Install manually from App store.
+
 ### Dash
 
 - Download docs for:
