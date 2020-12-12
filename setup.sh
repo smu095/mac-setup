@@ -86,7 +86,6 @@ brew install --cask rectangle
 brew install python
 brew install r
 brew install node
-brew install --cask dash
 brew install --cask docker
 brew install --cask iterm2
 brew install --cask rstudio
@@ -101,10 +100,12 @@ brew install wget
 brew install zsh
 
 ### Productivity
+brew install --cask 1password
 brew install --cask alfred
 brew install --cask alt-tab
 brew install --cask dozer
 brew install --cask dropbox
+brew install --cask fantastical
 brew install --cask firefox
 brew install --cask google-chrome
 brew install --cask slack

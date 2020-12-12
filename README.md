@@ -115,7 +115,6 @@ brew install --cask rectangle
 brew install python
 brew install r
 brew install node
-brew install --cask dash
 brew install --cask docker
 brew install --cask iterm2
 brew install --cask rstudio
@@ -130,10 +129,12 @@ brew install wget
 brew install zsh
 
 ### Productivity
+brew install --cask 1password
 brew install --cask alfred
 brew install --cask alt-tab
 brew install --cask dozer
 brew install --cask dropbox
+brew install --cask fantastical
 brew install --cask firefox
 brew install --cask google-chrome
 brew install --cask slack
@@ -282,6 +283,24 @@ fi
 
 The following steps are performed manually:
 
+### Alfred
+
+- Activate Powerpack.
+- Install workflows:
+
+  - [Can I Use](https://github.com/willfarrell/alfred-caniuse-workflow)
+  - [Chrome Bookmarks](https://github.com/bayleedev/alfred-chrome-bookmarks)
+  - [Colors](http://www.packal.org/workflow/colors)
+  - [DevDocs](https://github.com/yannickglt/alfred-devdocs)
+  - [Fantastical](https://www.alfredapp.com/blog/productivity/dont-miss-a-date-with-fantastical-2-and-workflows/)
+  - [Github Repos](https://github.com/edgarjs/alfred-github-repos)
+  - [Kill Process](https://github.com/ngreenstein/alfred-process-killer)
+  - [StackExchange Search](https://github.com/deanishe/alfred-stackexchange)
+
+### 1Password
+
+Install [Chrome extension](https://chrome.google.com/webstore/detail/1password-x-%E2%80%93-password-ma/aeblfdkhhhdcdjpifhhbdiojplfjncoa?hl=en).
+
 ### iTerm2
 
 - _iTerm2 → Profiles → General_
@@ -309,21 +328,6 @@ The following steps are performed manually:
   - [x] Secondary click
   - [x] Tap to click
 - Change where screenshots are saved: _Screenshot → Options → Save to._
-
-### Flycut
-
-Install manually from App store.
-
-### Dash
-
-- Download docs for:
-  - Python
-  - R
-  - JavaScript
-  - HTML
-  - CSS
-- Download cheat sheets for:
-  - git
 
 ### Visual Studio Code
 
