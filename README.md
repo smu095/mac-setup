@@ -289,13 +289,15 @@ The following steps are performed manually:
 - Install workflows:
 
   - [Can I Use](https://github.com/willfarrell/alfred-caniuse-workflow)
-  - [Chrome Bookmarks](https://github.com/bayleedev/alfred-chrome-bookmarks)
   - [Colors](http://www.packal.org/workflow/colors)
   - [DevDocs](https://github.com/yannickglt/alfred-devdocs)
   - [Fantastical](https://www.alfredapp.com/blog/productivity/dont-miss-a-date-with-fantastical-2-and-workflows/)
   - [Github Repos](https://github.com/edgarjs/alfred-github-repos)
   - [Kill Process](https://github.com/ngreenstein/alfred-process-killer)
   - [StackExchange Search](https://github.com/deanishe/alfred-stackexchange)
+
+- Enable Google Suggest (_Examples > Google Suggest_).
+- Add [iTerm2 integration](https://github.com/vitorgalvao/custom-alfred-iterm-scripts).
 
 ### 1Password
 
