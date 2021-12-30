@@ -26,7 +26,7 @@ e_settled() {
 }
 
 has_command() {
-  if [ $(type -P $1) ]; then
+  if [ $(type -p $1) ]; then
     return 0
   fi
   return 1
@@ -40,6 +40,21 @@ test_command() {
   fi
 }
 
+has_nvm() {
+  if [ -e "~/.nvm/nvm.sh" ]; then
+    return 1
+  fi
+  return 0
+}
+
+test_nvm() {
+  if has_nvm; then
+    e_success "nvm"
+  else
+    e_failure "nvm"
+  fi
+}
+
 has_brew() {
   if $(brew ls --versions $1 > /dev/null); then
     return 0
@@ -49,6 +64,21 @@ has_brew() {
 
 test_brew() {
   if has_brew $1; then
+    e_success "$1"
+  else
+    e_failure "$1"
+  fi
+}
+
+has_cask() {
+  if $(brew list --cask $1 > /dev/null); then
+    return 0
+  fi
+  return 1
+}
+
+test_cask() {
+  if has_cask $1; then
     e_success "$1"
   else
     e_failure "$1"
