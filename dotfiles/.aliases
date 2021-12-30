@@ -53,7 +53,7 @@ alias reload="exec ${SHELL} -l"
 
 # List folder structure in current folder
 dir() {
-    tree -d -L ${1}
+    tree -d -L ${1:-2}
 }
 
 # Restart computer
