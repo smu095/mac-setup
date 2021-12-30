@@ -1,0 +1,55 @@
+{
+    "editor.formatOnSave": true,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "[svelte]": {
+        "editor.defaultFormatter": "svelte.svelte-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.colorTheme": "Material Theme",
+    "todo-tree.tree.showScanModeButton": false,
+    "workbench.iconTheme": "eq-material-theme-icons",
+    "files.trimTrailingWhitespace": true,
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "emmet.syntaxProfiles": {
+        "html": {
+            "filters": "html, bem"
+        }
+    },
+    "emmet.preferences": {
+        "bem.elementSeparator": "__",
+        "bem.modifierSeparator": "_",
+    },
+    "files.autoSave": "onWindowChange",
+    "files.autoSaveDelay": 20,
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]"
+    ],
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "jupyter.askForKernelRestart": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "svelte.enable-ts-plugin": true,
+    "workbench.colorCustomizations": {
+        "[Material Theme High Contrast]": {}
+    }
+}
