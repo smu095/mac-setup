@@ -6,9 +6,6 @@
 # Remove alle Node.js modules
 alias rmnode="find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
 
-# Shorten todo.sh command
-alias t="todo.sh"
-
 # Simplify fuzzy finder piping
 alias -g Z="| fzf"
 
@@ -28,7 +25,9 @@ alias .....="cd ../../../.."
 alias docs="cd ~/Documents"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias dev="cd ~/Development/projects"
+alias dev="cd ~/Development/projects/svelte"
+alias rdev="cd ~/Development/R"
+alias data="cd ~/Development/projects/data-innhenting"
 
 # Update macOS, brew
 alias update="sudo softwareupdate -i -a"
@@ -52,6 +51,11 @@ alias reload="exec ${SHELL} -l"
 # Functions #
 #############
 
+# List folder structure in current folder
+dir() {
+    tree -d -L ${1}
+}
+
 # Restart computer
 restart(){
     echo "Enter password to restart your computer..."
@@ -66,4 +70,18 @@ dot() {
     else
         cp -vi ~/dotfiles/${1} ${PWD}
     fi
+}
+
+# Convenience function for ai2html projects
+mmai2html() {
+     git clone git@github.schibsted.io:aftenposten-mm/ai2html-templates.git temp-$1
+     mv temp-$1/sample $1
+     rm -rf temp-$1
+     cd $1
+     node init.js $1
+     npm init -y
+     rm -rf ai2html-output
+     rm -rf init.js
+     mv sample-ai2html.ai $1.ai
+     open $1.ai
 }
