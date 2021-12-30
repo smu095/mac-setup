@@ -7,6 +7,10 @@ This repository contains personal dotfiles and scripts for setting up a new Mac,
 - [How to Set Up Your MacBook for Web Development in 2020](https://medium.com/better-programming/setting-up-your-mac-for-web-development-in-2020-659f5588b883#d118)
 - [Boost Your Command-Line Productivity With Fuzzy Finder](https://medium.com/better-programming/boost-your-command-line-productivity-with-fuzzy-finder-985aa162ba5d)
 - [Homebrew](https://brew.sh/)
+- [Madam, I'm yadm](https://dataand.me/posts/2021-12-30-madam-im-yadm/)
+- [Making the M1 Leap](https://dataand.me/notes/2021-12-06-making-the-m1-leap/)
+- [Setting Up A New Macbook Pro](https://www.garrickadenbuie.com/blog/setting-up-a-new-macbook-pro/)
+- [mac-dev-setup (github.com/michaelschwobe)](https://github.com/michaelschwobe/mac-dev-setup)
 
 ## Install from script
 
