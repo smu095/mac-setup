@@ -3,7 +3,7 @@
 # Many of these aliases are borrowed from
 # https://github.com/mathiasbynens/dotfiles/blob/main/.aliases
 
-# Remove alle Node.js modules
+# Remove all Node.js modules
 alias rmnode="find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
 
 # Simplify fuzzy finder piping
@@ -29,8 +29,7 @@ alias dev="cd ~/Development/projects/svelte"
 alias rdev="cd ~/Development/R"
 alias data="cd ~/Development/projects/data-innhenting"
 
-# Update macOS, brew
-alias update="sudo softwareupdate -i -a"
+# Update brew
 alias brewup="brew update; brew upgrade; brew cleanup; brew doctor"
 
 # Show/hide hidden files in Finder
