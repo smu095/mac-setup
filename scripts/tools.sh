@@ -42,6 +42,8 @@ if has_command "brew"; then
   fi
 fi
 
+echo "\r"
+
 # ------------------------------------------------------------------------------
 e_pending "Checking for Node Version Manager"
 # ------------------------------------------------------------------------------
@@ -58,6 +60,24 @@ if ! has_nvm; then
     test_nvm
   fi
 fi
+
+echo "\r"
+
+# ------------------------------------------------------------------------------
+e_pending "Checking for yarn package manager"
+# ------------------------------------------------------------------------------
+
+test_command "yarn"
+if ! has_command "yarn"; then
+  get_consent "Install yarn (via nvm)"
+  if has_consent; then
+    e_pending "Installing yarn"
+    npm install --global yarn
+    test_command "yarn"
+  fi
+fi
+
+echo "\r"
 
 # ------------------------------------------------------------------------------
 e_pending "Checking zsh-extensions and themes"
