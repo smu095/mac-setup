@@ -1,5 +1,7 @@
 # Setting up a new Mac
 
+**NOTE**: This README has not been updated to reflect the current setup. What follows is a description of the contents in the `deprecated` folder.
+
 This repository contains personal dotfiles and scripts for setting up a new Mac, inspired by [Nina Zakharenko](https://github.com/nnja/new-computer). Aliases and macOS configuration heavily inspired by [Mathias's dotfiles](https://github.com/mathiasbynens/dotfiles).
 
 ## Useful resources:
