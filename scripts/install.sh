@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# Install xcode-select, brew and create dev-folders
-source setup.sh
+source _utils.sh
+
+# Install xcode-select, brew, setup zsh and create dev-folders
+source requirements.sh
 
 # Set sensible macOS defaults, install tools, brews and casks, set sensible app defaults
-source defaults.sh
+source system-defaults.sh
 source tools.sh
 source casks.sh
 source app-defaults.sh

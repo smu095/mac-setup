@@ -137,6 +137,3 @@ if ! [[ "${OSTYPE}" == "darwin"* ]]; then
   e_failure "Unsupported operating system (macOS only)"
   exit 1
 fi
-
-# This will clear the prompt before each sourced file.
-clear
