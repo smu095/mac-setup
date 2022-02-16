@@ -1,4 +1,5 @@
 #!/bin/zsh
+source _utils.sh
 
 # ------------------------------------------------------------------------------
 e_pending "Installing required tools"
