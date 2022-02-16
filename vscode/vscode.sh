@@ -1,0 +1,22 @@
+#!/bin/bash
+code --install-extension 2gua.rainbow-brackets
+code --install-extension ardenivanov.svelte-intellisense
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension eamodio.gitlens
+code --install-extension equinusocio.vsc-material-theme
+code --install-extension equinusocio.vsc-material-theme-icons
+code --install-extension esbenp.prettier-vscode
+code --install-extension fivethree.vscode-svelte-snippets
+code --install-extension Gruntfuggly.todo-tree
+code --install-extension ms-python.python
+code --install-extension ms-python.vscode-pylance
+code --install-extension ms-toolsai.jupyter
+code --install-extension ms-toolsai.jupyter-keymap
+code --install-extension ms-toolsai.jupyter-renderers
+code --install-extension ms-vscode-remote.remote-containers
+code --install-extension ms-vscode-remote.remote-ssh
+code --install-extension ms-vscode-remote.remote-ssh-edit
+code --install-extension ms-vscode-remote.remote-wsl
+code --install-extension ms-vscode-remote.vscode-remote-extensionpack
+code --install-extension nickyhajal.vs-code-svelte-require
+code --install-extension svelte.svelte-vscode
