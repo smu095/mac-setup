@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/bin/zsh
 source _utils.sh
 
 # Install xcode-select, brew, setup zsh and create dev-folders
