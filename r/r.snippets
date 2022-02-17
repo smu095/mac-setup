@@ -8,16 +8,22 @@ snippet rxl
 	readxl::read_xlsx(here("${1:folder}", "${2:folder}", "${3:file}.xlsx"))
 
 snippet rcsv
-	read_csv(here("${1:folder}", "${2:folder}", "${3:file}.csv"))
+	readr::read_csv(here("${1:folder}", "${2:folder}", "${3:file}.csv"))
 
 snippet pkgs
 	library(tidyverse)
 	library(lubridate)
 	library(here)
 	library(janitor)
+	library(googlesheets4)
+	library(aptools)
+	library(datawrappr)
 
 snippet ie
 	if_else(${1:condition}, ${2:TRUE}, ${3:FALSE})
 
 snippet cn
-	clean_names()
+	janitor::clean_names()
+
+snippet rsh
+	googlesheets4::read_sheet(${1:url})
