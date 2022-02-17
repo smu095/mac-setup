@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 color_reset=$(tput sgr0)
 color_red=$(tput setaf 1)

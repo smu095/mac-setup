@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 source _utils.sh
 
@@ -86,11 +86,6 @@ fi
 get_consent "Global: Disable Notification Center and remove the menu bar icon"
 if has_consent; then
   launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
-fi
-
-get_consent "Global: Show battery percentage"
-if has_consent; then
-  defaults write com.apple.menuextra.battery ShowPercent -bool true
 fi
 
 get_consent "Screensaver: Require password immediately after sleep or screen saver begins"

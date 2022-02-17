@@ -1,10 +1,12 @@
-#!/bin/zsh
+#!/bin/bash
+
 source _utils.sh
 
 # ------------------------------------------------------------------------------
 e_pending "Installing required tools"
 # ------------------------------------------------------------------------------
 
+# Remove this
 if ! has_command "xcode-select"; then
   e_pending "Installing xcode-select (CLI tools)"
   xcode-select --install
@@ -25,7 +27,7 @@ fi
 
 if ! has_command "brew"; then
   e_pending "Installing brew (Homebrew)"
-  /bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo '# This adds brew to PATH' >>! $HOME/.zprofile
   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>! $HOME/.zprofile
   eval "$(/opt/homebrew/bin/brew shellenv)"
