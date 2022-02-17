@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 source _utils.sh
 
@@ -6,7 +6,7 @@ source _utils.sh
 e_pending "Creating summary"
 # ------------------------------------------------------------------------------
 
-echo "\r"
+echo ""
 
 # ------------------------------------------------------------------------------
 e_pending "Checking folder creation and required tools"
@@ -23,7 +23,7 @@ fi
 test_command "xcode-select"
 test_command "brew"
 
-echo "\r"
+echo ""
 
 # ------------------------------------------------------------------------------
 e_pending "Checking tools and brews"
@@ -42,7 +42,7 @@ test_command "fzf"
 test_command "tree"
 test_command "wget"
 
-echo "\r"
+echo ""
 
 # ------------------------------------------------------------------------------
 e_pending "Checking apps"
@@ -64,14 +64,13 @@ test_app "Sourcetree"
 test_app "Spotify"
 test_app "Visual Studio Code"
 
-echo "\r"
+echo ""
 
 # ------------------------------------------------------------------------------
 e_pending "Checking zsh"
 # ------------------------------------------------------------------------------
 
 # Test zsh and plugins
-test_command "zsh"
 test_path ".oh-my-zsh"
 test_brew "powerlevel10k"
 test_brew "zsh-autosuggestions"
@@ -79,6 +78,6 @@ test_brew "zsh-syntax-highlighting"
 
 e_success "Optimisation commands have been run"
 
-echo "\r"
+echo ""
 
 e_settled "Congratulations! Installation complete"

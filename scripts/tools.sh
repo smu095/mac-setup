@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 source _utils.sh
 
@@ -12,7 +12,6 @@ declare -a brew_name=(
 "git"
 "tree"
 "wget"
-"zsh"
 )
 
 if has_command "brew"; then
@@ -43,38 +42,32 @@ if has_command "brew"; then
   fi
 fi
 
-echo "\r"
+echo ""
 
 # ------------------------------------------------------------------------------
 e_pending "Checking for Node Version Manager"
 # ------------------------------------------------------------------------------
 
-test_nvm
 if ! has_nvm; then
   get_consent "Install Node Version Manager"
   if has_consent; then
     e_pending "Installing nvm"
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-    echo '# This loads nvm' >>! $HOME/.zshrc
-    echo 'export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >>! $HOME/.zshrc
-    test_nvm
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | /bin/bash
   fi
-    get_consent "Install Node LTS (via nvm)"
-    if has_consent; then
-      e_pending "Installing Node LTS"
-      source ~/.nvm/nvm.sh
-      nvm install --lts
-    fi
+  get_consent "Install Node LTS (via nvm)"
+  if has_consent; then
+    e_pending "Installing Node LTS"
+    source ~/.nvm/nvm.sh
+    nvm install --lts
+  fi
 fi
 
-echo "\r"
+echo ""
 
 # ------------------------------------------------------------------------------
 e_pending "Checking for yarn package manager"
 # ------------------------------------------------------------------------------
 
-test_command "yarn"
 if ! has_command "yarn"; then
   get_consent "Install yarn (via nvm)"
   if has_consent; then
@@ -84,4 +77,4 @@ if ! has_command "yarn"; then
   fi
 fi
 
-echo "\r"
+echo ""
